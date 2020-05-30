@@ -1,0 +1,181 @@
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+html {
+  box-sizing: border-box;
+  font-family: arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+
+body {
+  background: #ccc;
+  margin: 30px 50px;
+  line-height: 1.4;
+}
+
+.btn {
+  background: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  gap: 1.2rem;
+}
+
+/* NAVIGARION */
+
+.main-nav ul {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(4, 1fr);
+  list-style: none;
+}
+
+.main-nav a {
+  background: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-style: 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.main-nav a:hover {
+  color: var(--light);
+  background: var(--dark);
+}
+
+/* TOP CONTAINER */
+
+.top-container {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-areas:
+    "showcase showcase top-box-a"
+    "showcase showcase top-box-b";
+}
+
+/* Showcase */
+
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background: url("images/iphone-dark-notebook-pen-34140.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.showcase h1 {
+  font-style: 4rem;
+  margin-bottom: 0;
+  color: var(--light);
+}
+.showcase p {
+  font-style: 1.3rem;
+  margin-top: 0;
+  color: var(--light);
+}
+
+/* TOP BOXES */
+.top-box {
+  background: var(--primary);
+  display: grid;
+  align-items: center;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  justify-items: center;
+}
+
+.top-box .price {
+  font-size: 2.5rem;
+}
+
+.top-box-a {
+  grid-area: top-box-a;
+}
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* BOXES */
+
+.boxes {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--primary);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+/* INFO  */
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background: var(--primary);
+  padding: 4rem;
+  box-shadow: var(--shadow);
+  font-size: 1.4rem;
+}
+
+/* PORTFOLIO */
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+
+.portfolio img {
+  width: 100%;
+  box-shadow: var(--shadow);
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--dark);
+  color: var(--light);
+  font-size: 1.3rem;
+}
+
+@media (max-width: 700px) {
+  .top-container {
+    grid-template-areas:
+      "showcase showcase"
+      "top-box-a top-box-b";
+  }
+
+  .info {
+    grid-template-columns: 1fr;
+  }
+}
